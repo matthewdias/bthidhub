@@ -1,14 +1,14 @@
 [Unit]
 Description=Remapper
 After=multi-user.target
- 
+
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/pi/bthidhub/remapper.py
+ExecStart=/usr/bin/python3 /home/matthew/bthidhub/remapper.py
 ExecStartPost=/usr/bin/bash -c 'echo none > /sys/class/leds/led0/trigger'
 ExecStopPost=/usr/bin/bash -c 'echo heartbeat > /sys/class/leds/led0/trigger'
-WorkingDirectory=/home/pi/bthidhub
+WorkingDirectory=/home/matthew/bthidhub
 Restart=on-abort
- 
+
 [Install]
 WantedBy=multi-user.target
